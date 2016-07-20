@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    
+    <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+
+
+<body>
+    <div id="mainwrap">																																																																																																																																																																																																																																																																																																																				
+
+    <div id="footer_terms">
+        <h1><strong>PROG_WEB</strong> no <a href="http://facol.com/si/" target="_blank"><strong>.::FACOL SI::.</strong></a></h1>
+    </div>
+
+
+
+<!--COLUNA ESQUERDA - TEMOS AQUI O MENU LATERAL PARA ACESSAR AS DEMAIS PAGINAS DO SITE-->
+	<div id="leftcol">
+    	<h1 id="logo"><a href="?">Aprender<span>PHP</span></a></h1>
+        <div id="mainnav">
+        	<ul>
+            	<li><a href="?"><span>Inicio</span></a></li>
+                <li><a href="introducao.html" target="mostrar"><span>Introdução</span></a></li>
+                <li><a href="sintaxe.html"><span>Sintaxe Básica</span></a></li>
+                <li><a href="tipos.html"><span>Tipos</span></a></li>
+                <li><a href="constantes.html"><span>Constantes</span></a></li>
+                <li><a href="operadores.html"><span>Operadores</span></a></li>
+                <li><a href="es_controle.html"><span>Estruturas de Controle</span></a></li>
+                <li><a href="funcoes.html"><span>Funções</span></a></li>
+                <li><a href="?"><span>Variáveis</span></a></li>
+                <li><a href="?"><span>Classes e Objetos</span></a></li>
+                <li><a href="?"><span>PHP avançado</span></a></li>
+                <li><a href="?"><span>SQL</span></a></li>
+                <li><a href="?"><span>BD compatíveis</span></a></li>
+                <li><a href="?"><span>Biblioteca de Funções </span></a></li>
+                <li><a href="?"><span> Referências da Web</span></a></li>
+            </ul>
+        </div>
+        
+               <!-- Caixa de informações-->
+        <div class="module-box grey1">
+        	<h2 class="none">O PHP é gratuito</h2>
+        	<div class="module-content">
+                <p>Ninguém vai te cobrar royalties por desenvolver em PHP</p>
+            </div>  
+        </div>
+        
+        <!-- NOVIDADES - aqui temos as novidades sobre php-->
+        <div class="module-box">
+        	<h2 class="orange">Novidades</h2>
+            <div class="module-content">
+            	<ul class="none">
+                	<li>
+                    	<strong><a href="?" class="black">24 de Março/2013</a></strong>
+                        <p>PHP 5.5 – Novidades e novas funcionalidades</p>
+                        <a href="http://blog.thiagobelem.net/php-5-5-novidades-e-novas-funcionalidades/" target="_blank">Ir para site</a>
+                    </li>
+                    <li>
+                    	<strong><a href="?" class="black">30 de Janeiro/2014</a></strong>
+                        <p>Novidades do Php 5.6</p>
+                        <a href="http://rubsphp.blogspot.com.br/2014/01/novidades-do-php-5.6.0.html" target="_blank">Ir para site</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- aqui fica o newsletter para receber informações do site de php /OBS: CRIAR FUNÇÃO PARA VALIDAR E-MAIL-->
+        <div class="module-box">
+        	<h2 class="grey">Newsletter</h2>
+            <div class="module-content grey">
+            	<label for="email">E-mail:</label>
+                <input type="text" style="with: 160px;" value="" id="email" />
+                <input type="submit" value="OK" />
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="rightcol">
+    
+    	<div id="header" class="clearfix">
+        	<div id="call">Aprender Php</div>
+            <div id="search"><input type="text" style="with: 160px;" value="" id="input-search" /><input type="submit" value="ok" id="ok" /></div>
+        </div>
+        
+        
+        <div id="banner">
+        </div>
+        
+        
+        <div id="content">
+            <h3>Bem-vindo ao website Aprender Php</h3>
+            <strong>Um pouco sobre Php</strong>
+            <p>O que exatamente é o PHP? Tecnicamente falando, trata-se de uma linguagem de programação Server-Side para internet que pode executar múltiplas funções. O PHP tem algumas características marcantes e que fazem aumentar diariamente a quantidade de desenvolvedores e sites que passa a usá-lo. Começou com pouco mais de 100.000 sites em janeiro de 2002 e chegou a 2 milhões em junho de 2004, ou seja, um crescimento de 2.000% em 2 anos.</p>
+            <p>Além do fato do PHP ser absolutamente gratuito, uma de suas grandes vantagens é que ele é multi-plataforma. Roda não só em servidors Windows mas também em Linux, Unix, FreeBSD e mais uma dúzia de sistemas operacionais. Imagine o caso de uma grande corporação que resolva mudar de plataforma, de Windows para Linux ou vise-versa. Como o PHP é multi-plataforma, bastaria passar os scripts de uma máquina para a outra e pronto. Em comparação, se os sites tivessem sido escritos em ASP a empresa estaria presa à Microsoft. Até existem emuladores de ASP para rodas em sistemas com base Unix (Como o Linux) mas estas emulações não são 100% compatíveis</p>
+           
+           <h3>O segredo é!</h3>
+            <img src="images/photo1.jpg" class="floatleft" alt="" />
+                     
+       
+       
+        <div id="footer">
+        	<div id="botnav" style="text-align:center">
+            	<ul class="clearfix">
+                	<li><a href="?">Inicio</a></li>
+                    <li><a href="?">Videos</a></li>
+                    <li><a href="?">Cadastro</a></li>
+                </ul>
+            </div>
+            <div id="copyright">
+            	Copyright (c) Programação web - .::FACOL SI 2014::. &nbsp;|&nbsp; Prof. Walter
+            </div>
+        </div>
+    </div>
+           -->
+</div>
+</body>
+</html>

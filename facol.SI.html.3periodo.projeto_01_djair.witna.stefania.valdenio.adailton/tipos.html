@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body>
+    
+    <div id="mainwrap">																																																																																																																																																																																																																																																																																																																				
+
+    <div id="footer_terms">
+        <h1><strong>PROG_WEB</strong> no <a href="http://facol.com/si/" target="_blank"><strong>.::FACOL SI::.</strong></a></h1>
+    </div>
+    
+  <div id="content">
+   <h3>Tipos</h3>
+   <strong><i>Tipos Suportados </i></strong>
+   <p>PHP suporta os seguintes tipos de dados: </p>
+   <ul>
+   <li>Inteiro</li>
+   <li>Ponto flutuante</li>
+   <li>String</li>
+   <li>Array</li>
+   <li>Objeto</li>
+   </ul>
+   
+   <p>PHP utiliza checagem de tipos dinâmica, ou seja, uma variável pode conter 
+valores de diferentes tipos em diferentes momentos da execução do script. Por este motivo 
+não é necessário declarar o tipo de uma variável para usá-la. O interpretador PHP decidirá 
+qual o tipo daquela variável, verificando o conteúdo em tempo de execução. 
+Ainda assim, é permitido converter os valores de um tipo para outro 
+desejado, utilizando o typecasting ou a função settype (ver adiante). </p>
+
+<strong><i>Inteiros (integer ou long)</i></strong>
+<p>Uma variável pode conter um valor inteiro com atribuições que sigam as seguintes sintaxes: </p>
+<img src="images/tipos1.PNG" /> </br>
+<p>A diferença entre inteiros simples e long está no número de bytes utilizados para 
+armazenar a variável. Como a escolha é feita pelo interpretador PHP de maneira transparente para o usuário, 
+podemos afirmar que os tipos são iguais. </p>
+
+<strong><i>Números em Ponto Flutuante (double ou float) </i></strong>
+<p>Uma variável pode ter um valor em ponto flutuante com atribuições que sigam as seguintes 
+sintaxes: </p>
+<img src="images/tipos2.PNG" /> </br>
+<strong><i>Strings </i></strong>
+<p>Strings podem ser atribuídas de duas maneiras: </p>
+<p>a) utilizando aspas simples ( ' ) - Desta maneira, o valor da variável será exatamente o texto contido entre as 
+aspas (com exceção de \\ e \' - ver tabela abaixo) </p>
+<p>b) utilizando aspas duplas ( " ) - Desta maneira, qualquer variável ou caracter de escape será expandido 
+antes de ser atribuído. </p>
+<img src="images/tipos3.PNG" /> </br>
+<p>A saída desse script será "---Brasil--" (com uma quebra de linha no final). </p>
+<p>A tabela seguinte lista os caracteres de escape:</p>   
+<img src="images/tipos4.PNG" /> </br>
+<strong><i>Arrays</i></strong>
+<p>Arrays em PHP podem ser observados como mapeamentos ou como vetores indexados. Mais 
+precisamente, um valor do tipo array é um dicionário onde os índices são as chaves de acesso. Vale ressaltar 
+que os índices podem ser valores de qualquer tipo e não somente inteiros. Inclusive, se os índices forem todos 
+inteiros, estes não precisam formar um intervalo contínuo </p>
+<p>Como a checagem de tipos em PHP é dinâmica, valores de tipos diferentes podem ser usados 
+como índices de array, assim como os valores mapeados também podem ser de diversos tipos. </p>
+   
+<img src="images/tipos5.PNG" /> </br>   
+<strong><i>Listas</i></strong>  
+<p>As listas são utilizadas em PHP para realizar atribuições múltiplas. Através de listas é 
+possível atribuir valores que estão num array para variáveis. Vejamos o exemplo: </p> 
+   <p>Exemplo:</p>
+   <p>list($a, $b, $c) = array(“a”, “b”, “c”);</p>
+   
+   <p>O comando acima atribui valores às três variáveis simultaneamente. É bom notar que só são 
+atribuídos às variáveis da lista os elementos do array que possuem índices inteiros e não negativos. No 
+exemplo acima as três atribuições foram bem sucedidas porque ao inicializar um array sem especificar os 
+índices eles passam a ser inteiros, a partir do zero. Um fator importante é que cada variável da lista possui um 
+índice inteiro e ordinal, iniciando com zero, que serve para determinar qual valor será atribuído. No exemplo 
+anterior temos $a com índice 0, $b com índice 1 e $c com índice 2. Vejamos um outro exemplo:</p>
+<p>$arr = array(1=>”um”,3=>”tres”,”a”=>”letraA”,2=>”dois); 
+list($a,$b,$c,$d) = $arr; </p>   
+<p>Após a execução do código acima temos os seguintes valores: </p>
+ <img src="images/tipos6.PNG" /> </br>   
+<p>Devemos observar que à variável $a não foi atribuído valor, pois no array não existe 
+elemento com índice 0 (zero). Outro detalhe importante é que o valor “tres” foi atribuído à variável $d, e não 
+a $b, pois seu índice é 3, o mesmo que $d na lista. Por fim, vemos que o valor “letraA” não foi atribuído a 
+elemento algum da lista, pois seu índice não é inteiro. </p>   
+<p>Os índices da lista servem apenas como referência ao interpretador PHP para realizar as 
+atribuições, não podendo ser acessados de maneira alguma pelo programador. De maneira diferente do array, 
+uma lista não pode ser atribuída a uma variável, servindo apenas para fazer múltiplas atribuições através de 
+um array. </p>   
+
+<strong><i>Objetos </i></strong>
+<p>Um objeto pode ser inicializado utilizando o comando new para instanciar uma classe para 
+uma variável. </p>
+ <img src="images/tipos7.PNG" /> </br>   
+<strong><i>Booleanos</i></strong>
+<p>PHP não possui um tipo booleano, mas é capaz de avaliar expressões e retornar true ou false, 
+através do tipo integer: é usado o valor 0 (zero) para representar o estado false, e qualquer valor diferente 
+de zero (geralmente 1) para representar o estado true. </p>
+<strong><i>Transformação de tipos </i></strong>
+<p>A transformação de tipos em PHP pode ser feita das seguintes maneiras: </p>
+<strong><i>Coerções </i></strong>
+<p>Quando ocorrem determinadas operações (“+”, por exemplo) entre dois valores de tipos 
+diferentes, o PHP converte o valor de um deles automaticamente (coerção). É interessante notar que se o 
+operando for uma variável, seu valor não será alterado. </p>
+<p>O tipo para o qual os valores dos operandos serão convertidos é determinado da seguinte 
+forma: Se um dos operandos for float, o outro será convertido para float, senão, se um deles for 
+integer, o outro será convertido para integer. </p>
+ <img src="images/tipos8.PNG" /> </br>
+<p>Como podemos notar, o PHP converte string para integer ou double mantendo o 
+valor. O sistema utilizado pelo PHP para converter de strings para números é o seguinte: </p>
+<ul>
+<li>É analisado o início da string. Se contiver um número, ele será avaliado. Senão, o 
+valor será 0 (zero); </li>
+<li>O número pode conter um sinal no início (“+” ou “-“); </li>
+<li>Se a string contiver um ponto em sua parte numérica a ser analisada, ele será 
+considerado, e o valor obtido será double;</li>
+<li>Se a string contiver um “e” ou “E” em sua parte numérica a ser analisada, o valor 
+seguinte será considerado como expoente da base 10, e o valor obtido será double; </li>
+</ul>
+ <img src="images/tipos9.PNG" /> </br>
+<strong><i>Transformação explícita de tipos</i></strong>
+<p>A sintaxe do typecast de PHP é semelhante ao C: basta escrever o tipo entre parênteses antes 
+do valor </p>
+ <img src="images/tipos10.PNG" /> </br>
+ <strong><i>Com a função settype </i></strong>
+ <p>A função settype converte uma variável para o tipo especificado, que pode ser “integer”, 
+“double”, “string”, “array” ou “object”. </p>
+<p>Exemplo:</p>
+<p>$php = 15;        // $php é integer 
+settype($php,double) // $php é double </p>
+   
+    </div>
+
+</body>
+</html>

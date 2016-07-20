@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body>
+    
+    <div id="mainwrap">																																																																																																																																																																																																																																																																																																																				
+
+    <div id="footer_terms">
+        <h1><strong>PROG_WEB</strong> no <a href="http://facol.com/si/" target="_blank"><strong>.::FACOL SI::.</strong></a></h1>
+    </div>
+    
+  <div id="content">
+   <h3>Funções</h3>
+  <strong><i>Definindo funções</i></strong>
+  <p>A sintaxe básica para definir uma função é:</p> 
+  <P><i>function nome_da_função([arg1, arg2, arg3]) {</i></P> 
+  <p><i>Comandos;</i></p> 
+  <p><i>... ;</i></p> 
+  <p><i>[return <valor de retorno>];</i></p> 
+  <p><i>}</i></p>
+  <p>Qualquer código PHP válido pode estar contido no interior de uma função. Como a
+checagem de tipos em PHP é dinâmica, o tipo de retorno não deve ser declarado, sendo necessário que o
+programador esteja atento para que a função retorne o tipo desejado. É recomendável que esteja tudo bem
+documentado para facilitar a leitura e compreensão do código. Para efeito de documentação, utiliza-se o
+seguinte formato de declaração de função:</p> 
+<p><i>tipo function nome_da_funcao(tipo arg1, tipo arg2, ...);</i></p>   
+<p>Este formato só deve ser utilizado na documentação do script, pois o PHP não aceita a
+declaração de tipos. Isso significa que em muitos casos o programador deve estar atento ao tipos dos valores
+passados como parâmetros, pois se não for passado o tipo esperado não é emitido nenhum alerta pelo
+interpretador PHP, já que este não testa os tipos.</p>   
+<strong><i>Valor de retorno</i></strong>   
+ <p>Toda função pode opcionalmente retornar um valor, ou simplesmente executar os comandos
+e não retornar valor algum.</p>  
+<p>Não é possível que uma função retorne mais de um valor, mas é permitido fazer com que
+uma função retorne um valor composto, como listas ou arrays.</p>   
+<strong><i>Argumentos</i></strong>   
+<p>É possível passar argumentos para uma função. Eles devem ser declarados logo após o nome
+da função, entre parênteses, e tornam-se variáveis pertencentes ao escopo local da função. A declaração do
+tipo de cada argumento também é utilizada apenas para efeito de documentação.</p>   
+<img src="images/funcoes1.PNG" /> </br>
+<strong><i>Passagem de parâmetros por referência</i></strong>
+<p>Normalmente, a passagem de parâmetros em PHP é feita por valor, ou seja, se o conteúdo da
+variável for alterado, essa alteração não afeta a variável original.</p>
+<img src="images/funcoes2.PNG" /> </br>
+<p>No exemplo acima, como a passagem de parâmetros é por valor, a função mais5 é inútil, já
+que após a execução sair da função o valor anterior da variável é recuperado. Se a passagem de valor fosse
+feita por referência, a variável $a teria 8 como valor. O que ocorre normalmente é que ao ser chamada uma
+função, o interpretador salva todo o escopo atual, ou seja, os conteúdos das variáveis. Se uma dessas variáveis
+for passada como parâmetro, seu conteúdo fica preservado, pois a função irá trabalhar na verdade com uma
+cópia da variável.7 Porém, se a passagem de parâmetros for feita por referência, toda alteração que a função
+realizar no valor passado como parâmetro afetará a variável que o contém.</p>
+<strong><i>Argumentos com valores pré-definidos (default)</i></strong>
+<p>Em PHP é possível ter valores default para argumentos de funções, ou seja, valores que serão
+assumidos em caso de nada ser passado no lugar do argumento. Quando algum parâmetro é declarado desta
+maneira, a passagem do mesmo na chamada da função torna-se opcional.</p>
+<img src="images/funcoes3.PNG" /> </br>
+<p>É bom lembrar que quando a função tem mais de um parâmetro, o que tem valor default deve
+ser declarado por último:</p>
+<img src="images/funcoes4.PNG" /> </br>
+<strong><i>Contexto</i></strong>
+<p>O contexto é o conjunto de variáveis e seus respectivos valores num determinado ponto do
+programa. Na chamada de uma função, ao iniciar a execução do bloco que contém a implementação da
+mesma é criado um novo contexto, contendo as variáveis declaradas dentro do bloco, ou seja, todas as
+variáveis utilizadas dentro daquele bloco serão eliminadas ao término da execução da função.</p>
+<strong><i>Escopo</i></strong>
+<p>O escopo de uma variável em PHP define a porção do programa onde ela pode ser utilizada.
+Na maioria dos casos todas as variáveis têm escopo global. Entretanto, em funções definidas pelo usuário um
+escopo local é criado. Uma variável de escopo global não pode ser utilizada no interior de uma função sem
+que haja uma declaração.</p>
+<img src="images/funcoes5.PNG" /> </br>
+<p>O trecho acima não produzirá saída alguma, pois a variável $php é de escopo global, e não
+pode ser referida num escopo local, mesmo que não haja outra com nome igual que cubra a sua visibilidade.
+Para que o script funcione da forma desejada, a variável global a ser utilizada deve ser declarada.</p>
+<img src="images/funcoes6.PNG" /> </br>
+
+   
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <meta charset="UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body>
+    
+    <div id="mainwrap">																																																																																																																												
+
+    <div id="footer_terms">
+        <h1><strong>PROG_WEB</strong> no <a href="http://facol.com/si/" target="_blank"><strong>.::FACOL SI::.</strong></a></h1>
+    </div>
+    
+    <div id="content">
+    <h3>SQL</h3>
+<strong><i>O que é?</i></strong>
+<p style="texto-aling:justify;text-indent:90px;">De acordo com Andrew Taylor, inventor original da linguagem SQL, o SQL não significa “Structured Query language” (ou qualquer outra coisa nesse sentido). Mas para o resto do mundo, esse é seu significado agora. Como você poderia esperar desse (não-)título, o SQL representa um método mais geral e mais estrito de armazenamento de dados que o padrão anterior de banco de dados não-relacionais no estilo dbm. </p>
+<p style="texto-aling:justify;text-indent:90px;">SQL não é ciência espacial. As quatro instruções básicas de manipulação de dados suportadas essencialmente por todos os bancos de dados de SQL são SELECT, INSERT, UPDATE e DELETE. SELECT recupera os dados do banco de dados, INSERT insere em uma nova entrada, UPDATE edita partes da entrada no lugar e DELETE exclui uma entrada completamente. </p>
+<p style="texto-aling:justify;text-indent:90px;">A maior parte da dificuldade reside em projetar bancos de dados. O projetista deve pensar muito seriamente sobre a melhor maneira de representar cada parte de dados e relacionamento para a utilização planejada. É um prazer programar com bancos de dados bem projetados, enquanto os pobremente projetados podem deixar você careca quando contemplar as numerosas conexões e horrorosas junções. </p>
+<p style="texto-aling:justify;text-indent:90px;">Os bancos de dados SQL são criados pelas chamadas instruções de estrutura de dados. As mais importantes são CREATE, ALTER e DROP. Como se poderia imaginar, CREATE DATABASE cria um novo banco de dados e CREATE TABLE define uma nova tabela dentro de um banco de dados. ALTER altera a estrutura de uma tabela. DROP é a bomba nuclear entre os comandos de SQL, uma vez que exclui completamente tabelas ou banco de dados inteiros.</p>
+<p style="texto-aling:justify;text-indent:90px;">O bom projeto de banco de dados também é uma questão de segurança. 
+Empregando medidas profiláticas razoáveis, um banco de dados SQL pode aprimorar a segurança de seu site.</p>
+</br>
+<strong><i>SELECT</i></strong>
+<p style="texto-aling:justify;text-indent:90px;">SELECT é o comando principal de que você precisa para obter informações fora de um banco de dados de SQL. A sintaxe básica é extremamente simples: </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">SELECT campo1, campo2, campo3 FROM tabela WHERE condições</p>
+<p style="texto-aling:justify;text-indent:90px;">Em alguns casos, você desejará pedir linhas inteiras em vez de selecionar partes individuais de informações. Essa prática é obsoleta por razões muito boas(ela pode ser mais lenta que solicitar apenas os dados de que você precisa e pode levar a problemas se você reprojetar a tabela) , mas ainda é utilizada e, portanto, precisamos menciona-la. Uma linha inteira é indicada utilizando o símbolo do asteristico: </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">SELECT * FROM minha_tabela WHERE campo1 = “abcdef” </p>
+<h2>Subseleções</h2>
+<p style="texto-aling:justify;text-indent:90px;">Antes de deixarmos o reino das instruções SELECT, devemos mencionar a subseleção. Essa é uma instrução como:</p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">SELECT phone_number FROM table WHERE name = ‘SELECT name FROM table2 WHERE id = 1’; </p>
+<p style="texto-aling:justify;text-indent:90px;">As subseleções são mais uma conveniência que uma necessidade. Elas podem ser muito úteis se você estiver trabalhando com enormes lotes de dados; mas é possível obter o mesmo resultado com duas seleções mais simples(embora isso será algo mais lento, mesmo no PHP4).</p>
+<strong><i>INSERT</i></strong>
+<p style="texto-aling:justify;text-indent:90px;">O comando que você precisa para colocar novos dados em um banco de dados é o INSERT. Eis a sintaxe básica:</p>
+<p style="texto-aling:justify;text-indent:60px;font-weight:bolder;">INSERT INTO tabela (campo1,campo2,campo3) VALUES($val1,$val2,$val3);</p>
+<p style="texto-aling:justify;text-indent:90px;">Obviamente as colunas e seus valores devem corresponder; se você misturar os seus itens de array, nada de bom acontecerá. Se algumas linhas não tiverem valores para alguns campos, você precisará utilizar um valor nulo, vazio ou auto-incrementado – e, em um nível mais profundo, você pode ter assegurado de antemão que os campos possam ser nulos ou auto-incrementáveis. Se isso não for possível, você simplesmente deve omitir qualquer coluna que você deseja que assuma o padrão de valor vazio em uma instrução de INSERT.</p>
+<p style="texto-aling:justify;text-indent:90px;">Um desdobramento da instrução INSERT básica é INSERT INTO... SELECT. Isso apenas significa que você pode inserir os resultados de uma instrução SELECT: </p>
+<p style="texto-aling:justify;text-indent:60px;font-weight:bolder;">INSERT INTO customer(birthmonth, birthflower, birthstone) SELECT * FROM birthday_info WHERE birthmonth = $birthmonth; </p>
+<p style="texto-aling:justify;text-indent:90px;">Entretanto, nem todos os bancos de dados de SQL têm essa capacidade. Além disso, é preciso ser cuidadoso com esse comando porque você pode facilmente causar problemas 
+para você mesmo. Em geral, não é uma boa idéia selecionar a partir do mesmo banco de dados em que você esta inserindo. </p>
+</br>
+<strong><i>UPDATE </i></strong>
+<p style="texto-aling:justify;text-indent:90px;">UPDATE é utilizado para editar informações que já estão no banco de dados sem excluir qualquer quantidade significativa. Em outras palavras, você pode seletivamente alterar algumas informações sem excluir um registro antigo inteiro e inserir um novo. A sintaxe é: </p>
+<p style="texto-aling:justify;font-weight:bolder;">UPDATE table SET campo1 = “val1”, campo2 = “val2”,campo3=”val3”  WHERE condição; </p>
+<p style="texto-aling:justify;text-indent:90px;">A instrução condicional é exatamente como uma condição SELECT, como WHERE id=15 ou WHERE gender=”F”. </p>
+</br>
+<strong><i>DELETE</i></strong>
+<br></br>
+<p style="texto-aling:justify;">DELETE é bastante auto-explicativa: você a utiliza para excluir permanentemente as 
+informações do banco de dados. A sintaxe é:</p>
+<p style="texto-aling:justify;font-weight:bolder;">DELETE datapoint FROM table WHERE condition; 
+<p style="texto-aling:justify;text-indent:90px;">A coisa mais importante a lembrar-se é da condição – se você não configurar uma, excluirá cada entrada nas colunas especificadas do banco de dados, sem uma confirmação ou uma segunda chance em muitos casos. </p>
+<br></br>
+<strong><i>O que há em comum entre: DELETE x UPDATE </i></strong>
+<p style="texto-aling:justify;text-indent:90px;">Você deve lembrar-se de utilizar uma condição toda vez que atualizar ou excluir. Se você não fizer isso, todas as linhas na tabela sofrerão a mesma alteração ou exclusão. Mesmo os programadores mais experientes esquecem a condição, para seu grande constrangimento profissional. Cuidado para não esquecer a condição. </p>
+<br></br>
+<strong><i>CREATE</i></strong>
+<p style="texto-aling:justify;text-indent:90px;">CREATE é utilizado para fazer uma tabela ou banco de dados completamente novo. Realmente criar um banco de dados implica um pouco mais que apenas atribuir um nome.</p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">CREATE DATABASE db_name; </p>
+<p style="texto-aling:justify;text-indent:90px;">Todo o trabalho está em definir as tabelas e as colunas. Primeiro você declara o nome da tabela e depois deve detalhar os tipos específicos de colunas dessa tabela no que é chamado de “definição de criação”. </p>
+
+<p style="texto-aling:justify;font-weight:bolder;">CREATE TABLE table { </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">->id_col INT NOT NULL AUTO_INCREMENT PRIMARY KEY,</p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">->col1 TEXT NULL INDEX, </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">->col2 DATE NOT NULL </p>
+<p style="texto-aling:justify;font-weight:bolder;">};</p>
+<p style="texto-aling:justify;text-indent:90px;">Diferentes servidores de SQL têm tipos de dados e opções de definição ligeiramente diferentes, então a sintaxe de um não pode transferir exatamente para outro. </p>
+<br></br>
+<strong><i>DROP</i></strong>
+<p style="texto-aling:justify;text-indent:90px;">DROP pode ser utilizado para excluir completamente uma tabela ou banco de dados e todos os seus dados associados. Ele não é um comando mais sutil: </p>
+<p style="texto-aling:justify;font-weight:bolder;">DROP TABLE table; </p>
+<p style="texto-aling:justify;font-weight:bolder;">DROP DATABASE db_name </p>
+<p style="texto-aling:justify;text-indent:90px;">Obviamente é necessário muito cuidado com essa instrução. </p>
+<br></br>
+<strong><i>ALTER </i></strong>
+<p style="texto-aling:justify;text-indent:90px;">ALTER é a maneira de alterar uma estrutura da tabela. Você simplesmente indica que tabela está alterando e redefine suas especificações. Novamente, eis os produtos SQL 
+diferem na sutileza. </p>
+<p style="texto-aling:justify;font-weight:bolder;">ALTER TABLE table RENAME AS new_table;</p>
+<p style="texto-aling:justify;font-weight:bolder;">ALTER TABLE new_table ADD COLUMN col3 VARCHAR(50) ; </p>
+<p style="texto-aling:justify;font-weight:bolder;">ALTER TABLE new_table DROP COLUMN col2; </p>
+<br></br>
+
+    </div>
+
+</body>
+</html>

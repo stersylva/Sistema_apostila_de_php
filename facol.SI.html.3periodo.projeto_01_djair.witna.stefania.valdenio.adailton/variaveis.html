@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ <meta charset="UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body>
+    
+    <div id="mainwrap">																																										
+    <div id="footer_terms">
+        <h1><strong>PROG_WEB</strong> no <a href="http://facol.com/si/" target="_blank"><strong>.::FACOL SI::.</strong></a></h1>
+    </div>
+    
+  <div id="content">
+   <h3>Variaveis</h3>
+  <strong><i>O modificador static</i></strong>
+	<p style="texto-aling:justify;text-indent:50px;">Uma variável estática é visível num escopo local, mas ela é inicializada apenas uma vez e 
+	seu valor não é perdido quando a execução do script deixa esse escopo. Veja o seguinte exemplo: </p>
+	<img src="images/cats.jpg"/>
+	<p style="texto-aling:justify;text-indent:50px;">O último comando da função é inútil, pois assim que for encerrada a execução da função a 
+	variável $a perde seu valor. Já no exemplo seguinte, a cada chamada da função a variável $a terá seu valor 
+	impresso e será incrementada:</p>
+	<img src="images/cats-crop.jpg"/></br>
+
+	<p style="texto-aling:justify;text-indent:50px;"> O modificador static é muito utilizado em funções recursivas, já que o valor de algumas 
+	variáveis precisa ser mantido. Ele funciona da seguinte forma: O valor das variáveis declaradas como 
+	estáticas é mantido ao terminar a execução da função. Na próxima execução da função, ao encontrar 
+	novamente a declaração com static, o valor da variável é recuperado.</p>
+	<p style="texto-aling:justify;text-indent:50px;"> Em outras palavras, uma variável declarada como static tem o mesmo “tempo de vida” 
+	que uma variável global, porém sua visibilidade é restrita ao escopo local em que foi declarada e só é 
+	recuperada após a declaração.</p>
+	<p style="texto-aling:justify;text-indent:50px;">Exemplo:</p>
+	<img src="images/cats-crop1.jpg"/></br>
+
+	<p style="texto-aling:justify;text-indent:50px;"> O exemplo acima não produzirá saída alguma. Na primeira execução da função, a impressão 
+	ocorre antes da atribuição de um valor à função e, portanto o conteúdo de $a é nulo (string vazia). Nas 
+	execuções seguintes da função Teste() a impressão ocorre antes da recuperação do valor de $a e, portanto 
+	nesse momento seu valor ainda é nulo. Para que a função retorne algum valor o modificador <b>static</b> deve 
+	ser utilizado.</p>
+
+	<strong><i>Variáveis enviadas pelo navegador</strong></i>
+	<p style="texto-aling:justify;text-indent:50px;">Para interagir com a navegação feita pelo usuário, é necessário que o PHP possa enviar e 
+	receber informações para o software de navegação. A maneira de enviar informações, como já foi visto 
+	anteriormente, geralmente é através de um comando de impressão, como o echo. Para receber informações 
+	vindas do navegador através de um link ou um formulário html o PHP utiliza as informações enviadas através 
+	da URL. Por exemplo: se seu script php está localizado em “http://localhost/teste.php3” e 
+	você o chama com a url “http://localhost/teste.php3?php=teste”, automaticamente o 
+	PHP criará uma variável com o nome $php contendo a string “teste”. Note que o conteúdo da variável está no 
+	formato urlencode. Os formulários html já enviam informações automaticamente nesse formato, e o PHP 
+	decodifica sem necessitar de tratamento pelo programador.</p>
+
+	<strong><i>URLencode</strong></i>
+
+	<p style="texto-aling:justify;text-indent:50px;">O formato urlencode é obtido substituindo os espaços pelo caracter “+” e todos os 
+	outros caracteres não alfa-numéricos (com exceção de “_”) pelo caracter “%” seguido do código ASCII em 
+	hexadecimal.</p> 
+ 
+	<p>Por exemplo: o texto “Testando 1 2 3 !!” em urlencode fica “Testando+1+2+3+%21%21”</p> 
+ 
+	<p>O PHP possui duas funções para tratar com texto em urlencode. Seguem suas sintaxes:</p>
+	<p><center>string <i><b>urlencode</i></b>(string texto);</p> 
+	<p>string <i><b>urldecode</i></b>(string texto); </p></center>
+
+	<p style="texto-aling:justify;text-indent:50px;">Essas funções servem respectivamente para codificar ou decodificar um texto 
+	passado como argumento. Para entender melhor o que é um argumento e como funciona 
+	uma função, leia o tópico “funções”.</p>
+	
+	<strong><i>Variáveis de ambiente</strong></i>
+
+	<p style="texto-aling:justify;text-indent:50px;">O PHP possui diversas variáveis de ambiente, como a <b>$PHP_SELF</b>, por exemplo, que 
+contém o nome e o path do próprio arquivo. Algumas outras contém informações sobre o navegador do 
+usuário, o servidor http, a versão do PHP e diversas informações. Para ter uma listagem de todas as variáveis 
+e constantes de ambiente e seus respectivos conteúdos, deve-se utilizar a função <b>phpinfo()</b>.
+
+	<p><strong><i>Verificando o tipo de uma variável</strong></i></p>
+
+	<p style="texto-aling:justify;text-indent:50px;">Por causa da tipagem dinâmica utilizada pelo PHP, nem sempre é possível saber qual o tipo 
+de uma variável em determinado instantes não contar com a ajuda de algumas funções que ajudam a verificar 
+isso. A verificação pode ser feita de duas maneiras:</p>
+
+<strong><i>Função que retorna o tipo da variável</strong></i>
+
+<p><center>Esta função é a <b>gettype</b>. Sua assinatura é a seguinte:</center>
+
+<p style="texto-aling:justify;text-indent:50px;">string <b>gettype</b>(mixed var)</p>
+<p style="texto-aling:justify;text-indent:50px;">A palavra “mixed” indica que a variável var pode ser de diversos tipos.</p>
+<p style="texto-aling:justify;text-indent:50px;">A função gettype pode retornar as seguintes strings:<b> “integer”, “double”, 
+“string”, “array”, “object” e “unknown type”.</b></p>
+
+
+<strong><i>Funções que testam o tipo da variáve</strong></i>
+
+<p style="texto-aling:justify;text-indent:50px;">São as funções is_int, is_integer, is_real, is_long, is_float, 
+is_string, is_array e is_object. Todas têm o mesmo formato, seguindo modelo da 
+assinatura a seguir:</p> 
+ 
+<p>int <b>is_integer</b>(mixed var);</p> 
+ 
+<p>Todas essas funções retornam true se a variável for daquele tipo, e false em caso contrário.</p>
+
+
+<strong><i>Destruindo uma variável</strong> </i>
+
+<p style="texto-aling:justify;text-indent:50px;">É possível desalocar uma variável se ela não for usada posteriormente através da função 
+unset, que tem a seguinte assinatura:</p> 
+ 
+<p style="texto-aling:justify;text-indent:50px;">int <b>unset</b>(mixed var); </p>
+ 
+<p style="texto-aling:justify;text-indent:50px;">A função destrói a variável, ou seja, libera a memória ocupada por ela, fazendo com que ela 
+deixe de existir. Se mais na frente for feita uma chamada á variável, será criada uma nova variável de mesmo 
+nome e de conteúdo vazio, a não ser que a chamada seja pela função isset. Se a operação for bem 
+sucedida, retorna true.</p> 
+
+<strong><i>Verificando se uma variável possui um valor</strong></i> 
+ 
+<p style="texto-aling:justify;text-indent:50px;">Existem dois tipos de teste que podem ser feitos para verificar se uma variável está setada: 
+com a função isset e com a função empty. </p>
+<p>A função isset </p>
+ 
+<p style="texto-aling:justify;text-indent:50px;">Possui o seguinte protótipo:</p> 
+ 
+<p style="texto-aling:justify;text-indent:50px;">int <b>isset</b>(mixed var);</p> 
+ 
+<p style="texto-aling:justify;text-indent:50px;">E retorna true se a variável estiver setada (ainda que com uma string vazia ou o valor 
+zero), e false em caso contrário.</p>
+
+<strong><i>A função empty</strong></i> 
+ 
+<p style="texto-aling:justify;text-indent:50px;">Possui a seguinte assinatura:</p> 
+ 
+int <b>empty</b>(mixed var); 
+ 
+<p style="texto-aling:justify;text-indent:50px;">E retorna true se a variável não contiver um valor (não estiver setada) ou possuir valor 0 
+(zero) ou uma string vazia. Caso contrário, retorna false. 
+ 
+ 
+</strong></i>Arrays Multidimensionais </strong></i>
+ 
+<p style="texto-aling:justify;text-indent:50px;">Arrays multidimensionais são arrays simples com um dos (ou todos) seus elementos 
+sendo outro array e assim consecutivamente.</p> 
+Exemplo: 
+ 
+ 
+<p>$Campeao[5] = 123456789 ;</p> 
+ <p></p>
+<p>$Tricampeao[“casa”] = $Campeao; </p>
+<p>$Tricampeao[“predio”] = 19191919;</p>
+<p></p> 
+ 
+<p>$Brasil[1] = $Tricampeao;</p> 
+<p>$Brasil[2] = “Bicampeao”; </p>
+<p>$Brasil[“copa”] = $Tricampeao; </p>
+<p>$Brasil[4] = “Tetracampeao”; </p>
+<p>$Brasil[“mundo”] = “Pentacampeao”;</p> 
+ 
+ 
+<p>echo $Campeao[5]; 
+// resultará 123456789 Array simples</p> 
+<p>echo $Brasil[1][“casa”][5] ; 
+// resultará 19191919 
+Array tridimensional</p> 
+<p>echo $Tricampeao[“casa”][5]; 
+// resultará 123456789 Array bidimensional </p>
+<p>echo $Brasil[“copa”][“predio”]; // resultará 19191919 
+Array bidimensional</p> 
+
+
+
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    </div>
+
+</body>
+</html>

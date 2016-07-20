@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body>
+    
+    <div id="mainwrap">																																																																																																																																																																																																																																																																																																																				
+
+    <div id="footer_terms">
+        <h1><strong>PROG_WEB</strong> no <a href="http://facol.com/si/" target="_blank"><strong>.::FACOL SI::.</strong></a></h1>
+    </div>
+    
+  <div id="content">
+   <h3> Sintaxe Básica </h3>
+   <strong><i> Delimitando o código PHP </i></strong>
+   <p>O código PHP fica embutido no próprio HTML. O interpretador identifica quando um 
+código é PHP pelas seguintes tags: </p>
+<img src="images/sintaxe1.PNG" /> </br>
+<p>O tipo de tags mais utilizado é o terceiro, que consiste em uma “abreviação” do primeiro. 
+Para utilizá-lo, é necessário habilitar a opção short-tags na configuração do PHP. O último tipo serve para 
+facilitar o uso por programadores acostumados à sintaxe de ASP. Para utilizá-lo também é necessário habilitá-
+lo no arquivo de configuração do PHP (php.ini) </p>
+
+<strong><i> Separador de instruções </i></strong>
+<p> Para cada fim de linha de código tem que haver um ponto e vírgula, indicando ao sistema 
+fim de instrução. </p>
+<img src="images/sintaxe2.PNG" /> </br>
+<p>Linhas de comando, de controle, não precisam de ponto e vírgula. </p>
+<img src="images/sintaxe3.PNG" /> </br>
+
+<strong><i>Nomes de variáveis </i></strong>
+<p>Toda variável em PHP tem seu nome composto pelo caracter $ e uma string, que deve iniciar 
+por uma letra ou o caracter “_”. PHP é case sensitive, ou seja, as variáveis $php e $PHP são diferentes. Por 
+isso é preciso ter muito cuidado ao definir os nomes das variáveis. É bom evitar os nomes em maiúsculas, 
+pois como veremos mais adiante, o PHP já possui alguma variáveis pré-definidas cujos nomes são formados 
+por letras maiúsculas. </p>
+
+<strong><i>Comentários</i></strong>
+<p>Há dois tipos de comentários em código PHP: </p>
+<img src="images/sintaxe4.PNG" /> </br>
+<p>Comentários de mais de uma linha: </p>
+<p>Tem como delimitadores os caracteres “/*” para o início do bloco e “*/” para o final do 
+comentário. Se o delimitador de final de código PHP ( ?> ) estiver dentro de um comentário, não será 
+reconhecido pelo interpretador. </p>
+<img src="images/sintaxe5.PNG" /> </br>
+
+ </div>
+
+</body>
+</html>

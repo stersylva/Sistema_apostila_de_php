@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body>
+    
+    <div id="mainwrap">																																																																																																																																																																																																																																																																																																																				
+
+    <div id="footer_terms">
+        <h1><strong>PROG_WEB</strong> no <a href="http://facol.com/si/" target="_blank"><strong>.::FACOL SI::.</strong></a></h1>
+    </div>
+    
+  <div id="content">
+   <h3>Estruturas de Controle</h3>
+   <p>As estruturas que veremos a seguir são comuns para as linguagens de programação
+imperativas, bastando, portanto, descrever a sintaxe de cada uma delas, resumindo o funcionamento.</p>
+ <strong><i>Blocos</i></strong>  
+  <p>Um bloco consiste de vários comandos agrupados com o objetivo de relacioná-los com
+determinado comando ou função. Em comandos como if, for, while, switch e em declarações de
+funções blocos podem ser utilizados para permitir que um comando faça parte do contexto desejado. Blocos
+em PHP são delimitados pelos caracteres “{” e “}”. A utilização dos delimitadores de bloco em uma parte
+qualquer do código não relacionada com os comandos citados ou funções não produzirá efeito algum, e será
+tratada normalmente pelo interpretador.</p> 
+ <p>Exemplo:</p>  
+ <p>if ($x == $y)</p>  
+ <p>comando1;</p>  
+ <p>comando2;</p> 
+ <p><p>Para que comando2 esteja relacionado ao if é preciso utilizar um bloco:</p></p>
+ <p>if ($x == $y){</p>
+ <p>comando1;</p>  
+ <p>comando2;</p>  
+ <p>}</p>  
+ <strong><i>Comandos de seleção</i></strong>
+ <p>Também chamados de condicionais, os comandos de seleção permitem executar comandos
+ou blocos de comandos com base em testes feitos durante a execução.</p>  
+ <strong>if</strong>  
+ <p>O mais trivial dos comandos condicionais é o if. Ele testa a condição e executa o comando
+indicado se o resultado for true (valor diferente de zero). Ele possui duas sintaxes:</p>  
+  <img src="images/es_controle1.PNG" /> </br>  
+   <img src="images/es_controle2.PNG" /> </br>    
+<p>Para incluir mais de um comando no if da primeira sintaxe, é preciso utilizar um bloco,
+demarcado por chaves.</p>   
+<p>O else é um complemento opcional para o if. Se utilizado, o comando será executado se
+a expressão retornar o valor false (zero). Suas duas sintaxes são:</p>   
+   <img src="images/es_controle3.PNG" /> </br> 
+<p>A seguir, temos um exemplo do comando if utilizado com else:</p>
+   <img src="images/es_controle4.PNG" /> </br> 
+<p>O exemplo acima coloca em $maior o maior valor entre $a e $b</p>
+<p>Em determinadas situações é necessário fazer mais de um teste, e executar condicionalmente
+diversos comandos ou blocos de comandos. Para facilitar o entendimento de uma estrutura do tipo:</p>
+ <img src="images/es_controle5.PNG" /> </br> 
+ <p>foi criado o comando, também opcional elseif. Ele tem a mesma função de um else e
+um if usados seqüencialmente, como no exemplo acima. Num mesmo if podem ser utilizados diversos
+elseif’s, ficando essa utilização a critério do programador, que deve zelar pela legibilidade de seu script.</p>
+<p>O comando elseif também pode ser utilizado com dois tipos de sintaxe. Em resumo, a
+sintaxe geral do comando if fica das seguintes maneiras:</p>
+ <img src="images/es_controle6.PNG" /> </br>
+ <img src="images/es_controle7.PNG" /> </br>
+<strong><i>switch</i></strong>
+<p>O comando switch atua de maneira semelhante a uma série de comandos if na mesma
+expressão. Freqüentemente o programador pode querer comparar uma variável com diversos valores, e
+executar um código diferente a depender de qual valor é igual ao da variável. Quando isso for necessário,
+deve-se usar o comando switch. O exemplo seguinte mostra dois trechos de código que fazem a mesma
+coisa, sendo que o primeiro utiliza uma série de if’s e o segundo utiliza switch:</p>
+ <img src="images/es_controle8.PNG" /> </br>
+<p>É importante compreender o funcionamento do switch para não cometer enganos. O
+comando switch testa linha a linha os cases encontrados, e a partir do momento que encontra um valor
+igual ao da variável testada, passa a executar todos os comandos seguintes, mesmo os que fazem parte de
+outro teste, até o fim do bloco. por isso usa-se o comando break, quebrando o fluxo e fazendo com que o
+código seja executado da maneira desejada. Veremos mais sobre o break mais adiante. Veja o exemplo:</p>
+ <img src="images/es_controle9.PNG" /> </br>
+<p>No exemplo acima, se $i for igual a zero, os três comandos “print” serão executados. Se $i
+for igual a 1, os dois últimos “print” serão executados. O comando só funcionará da maneira desejada se $i for
+igual a 2.</p>
+<p>Em outras linguagens que implementam o comando switch, ou similar, os valores a serem
+testados só podem ser do tipo inteiro. Em PHP é permitido usar valores do tipo string como elementos de teste
+do comando switch. O exemplo abaixo funciona perfeitamente:</p>
+ <img src="images/es_controle10.PNG" /> </br>
+<i>comandos de repetição</i>
+<strong><i>while</i></strong>
+<p>O while é o comando de repetição (laço) mais simples. Ele testa uma condição e executa
+um comando, ou um bloco de comandos, até que a condição testada seja falsa. Assim como o if, o while
+também possui duas sintaxes alternativas:</p>
+ <img src="images/es_controle11.PNG" /> </br>
+ <img src="images/es_controle12.PNG" /> </br>
+<p>A expressão só é testada a cada vez que o bloco de instruções termina, além do teste inicial.
+Se o valor da expressão passar a ser false no meio do bloco de instruções, a execução segue até o final do
+bloco. Se no teste inicial a condição for avaliada como false, o bloco de comandos não será executado.</p>
+<p>O exemplo a seguir mostra o uso do while para imprimir os números de 1 a 10:</p>
+<p>$i = 1;</p>
+<p>while ($i <=10)</p>
+<p>print $i++;</p>   
+<strong><i>do... while</i></strong>   
+<p>O laço do...while funciona de maneira bastante semelhante ao while, com a simples
+diferença que a expressão é testada ao final do bloco de comandos. O laço do...while possui apenas
+uma sintaxe, que é a seguinte:</p>   
+ <img src="images/es_controle13.PNG" /> </br>  
+<p>O exemplo utilizado para ilustrar o uso do while pode ser feito da seguinte maneira
+utilizando o do... while:</p>   
+<img src="images/es_controle14.PNG" /> </br>
+<strong>for</strong>
+<p>O tipo de laço mais complexo é o for. Para os que programam em C, C++ ou Java, a
+assimilação do funcionamento do for é natural. Mas para aqueles que estão acostumados a linguagens como
+Pascal, há uma grande mudança para o uso do for. As três sintaxes permitidas são:</p>
+<img src="images/es_controle15.PNG" /> </br>
+<p>As três expressões que ficam entre parênteses têm as seguintes finalidades:</p>
+<p>Inicialização: comando ou seqüência de comandos a serem realizados antes do inicio do laço.
+Serve para inicializar variáveis.</p>
+<p>Condição: Expressão booleana que define se os comandos que estão dentro do laço serão
+executados ou não. Enquanto a expressão for verdadeira (valor diferente de zero) os comandos serão
+executados.</p>
+<p>Incremento: Comando executado ao final de cada execução do laço.</p>
+<p>Um comando for funciona de maneira semelhante a um while escrito da seguinte forma:</p>
+<img src="images/es_controle16.PNG" /> </br>
+<p><i>Quebra de fluxo</i></p>
+<strong>Break</strong>
+<p>O comando break pode ser utilizado em laços de do, for e while, além do uso já
+visto no comando switch. Ao encontrar um break dentro de um desses laços, o interpretador PHP para
+imediatamente a execução do laço, seguindo normalmente o fluxo do script.</p>
+<img src="images/es_controle17.PNG" /> </br>
+<p>No trecho de código acima, o laço while tem uma condição para seu término normal ($x
+<= 0), mas foi utilizado o break para o caso de um término não previsto no início do laço. Assim o
+interpretador seguirá para o comando seguinte ao laço.</p>
+<strong>Continue</strong>
+<p>O comando continue também deve ser utilizado no interior de laços, e funciona de
+maneira semelhante ao break, com a diferença que o fluxo ao invés de sair do laço volta para o início dele.
+Vejamos o exemplo:</p>
+<img src="images/es_controle18.PNG" /> </br>
+<p>O exemplo acima é uma maneira ineficiente de imprimir os números pares entre 0 e 99. O
+que o laço faz é testar se o resto da divisão entre o número e 2 é 0. Se for diferente de zero (valor lógico
+true) o interpretador encontrará um continue, que faz com que os comandos seguintes do interior do
+laço sejam ignorados, seguindo para a próxima iteração.</p>
+
+        </div>
+
+</body>
+</html>

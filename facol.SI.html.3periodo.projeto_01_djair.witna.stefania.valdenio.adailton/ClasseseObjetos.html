@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+ <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body>
+    
+    <div id="mainwrap">																																																																																																																																																																																																																																																																																																																				
+
+    <div id="footer_terms">
+        <h1><strong>PROG_WEB</strong> no <a href="http://facol.com/si/" target="_blank"><strong>.::FACOL SI::.</strong></a></h1>
+    </div>
+    
+  <div id="content">
+   <h3>Classes e Objetos</h3>
+    <strong><i>Classe</i></strong>
+<p style="texto-aling:justify;text-indent:120px;">Uma classe é um conjunto de variáveis e funções relacionadas a essas variáveis. Uma 
+vantagem da utilização é poder usufruir o recurso de encapsulamento de informação. Com o encapsulamento 
+o usuário de uma classe não precisa saber como ela é implementada, bastando para a utilização conhecer a 
+interface, ou seja, as funções disponíveis. Uma classe é um tipo e, portanto não pode ser atribuída a uma 
+variável. Para definir uma classe, deve-se utilizar a seguinte sintaxe: </p>
+<br>
+<p style="texto-aling:justify;text-indent:120px;font-weight:bolder;">class Nome_da_classe { </p>
+<p style="texto-aling:justify;text-indent:150px;font-weight:bolder;">var $variavel1; </p>
+<p style="texto-aling:justify;text-indent:150px;font-weight:bolder;">var $variavel2; </p>
+<p style="texto-aling:justify;text-indent:150px;font-weight:bolder;">function funcao1 ($parâmetro) {  </p>
+<p style="texto-aling:justify;text-indent:180px;font-weight:bolder;">/* === corpo da função === */ </p>
+<p style="texto-aling:justify;text-indent:150px;font-weight:bolder;">} </p>
+<p style="texto-aling:justify;text-indent:120px;font-weight:bolder;">} </p>
+</br>
+ <strong><i>Objeto</i></strong>
+<p style="texto-aling:justify;text-indent:120px;">Como foi dito anteriormente, classes são tipos, e não podem ser atribuídas a variáveis. 
+Variáveis do tipo de uma classe são chamadas de objetos, e devem ser criadas utilizando o operador new, 
+seguindo o exemplo abaixo:</p>
+<p span style="texto-aling:justify;text-indent:120px;font-weight:bolder;">$variável = new $nome_da_classe;  </p>
+<br>
+<p span style="texto-aling:justify;text-indent:120px;">Para utilizar  as  funções definidas na classe, deve ser utilizado o operador “->”, como no exemplo: </p>
+<p span style="texto-aling:justify;text-indent:150px;font-weight:bolder;">$variável->funcao1();</p>
+<br></br>
+<strong><i>A variável $this </i></strong>
+<p style="texto-aling:justify;text-indent:120px;">Na definição de uma classe, pode-se utilizar a variável $this, que é o próprio objeto. 
+Assim, quando uma classe é instanciada em um objeto, e uma função desse objeto na definição da classe 
+utiliza a variável $this, essa variável significa o objeto que estamos utilizando. </p>
+ 
+<p style="texto-aling:justify;text-indent:120px;">Como exemplo da utilização de classes e objetos, podemos utilizar a classe conta, que define 
+uma conta bancária bastante simples, com funções para ver saldo e fazer um crédito. </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">class conta {</p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">var $saldo; </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">function saldo() { </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">return $this->saldo;  </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">} </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">function credito($valor) {  </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">$this->saldo += $valor;  </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">$minhaconta = new conta; </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">$minhaconta->saldo();    // a variável interna não foi </p>
+<p style="texto-aling:justify;text-indent:210px;font-weight:bolder;">// inicializada, e não contém  </p>
+<p style="texto-aling:justify;text-indent:210px;font-weight:bolder;">// valor algum </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">$minhaconta->credito(50); </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">$minhaconta->saldo(); // retorna 50  </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;"> </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;"> </p>
+</br>
+<strong><i>SubClasses</i></strong>
+<p style="texto-aling:justify;text-indent:120px;">Uma classe pode ser uma extensão de outra. Isso significa que ela herdará todas as variáveis 
+e funções da outra classe, e ainda terá as que forem adicionadas pelo programador. Em PHP não é permitido 
+utilizar herança múltipla, ou seja, uma classe pode ser extensão de apenas uma outra.Para criar uma classe 
+extendida, ou derivada de outra, deve ser utilizada a palavra reservada extends, como pode ser visto no 
+exemplo seguinte: </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">class novaconta extends conta {</p>
+<p style="texto-aling:justify;text-indent:120px;">var $numero;</p>
+<p style="texto-aling:justify;text-indent:120px;">function numero() {</p>
+<p style="texto-aling:justify;text-indent:150px;">return $this->numero; </p>
+<p style="texto-aling:justify;text-indent:120px;">}</p>
+<p style="texto-aling:justify;text-indent:90px;">}</p>
+</br>
+<p style="texto-aling:justify;text-indent:120px;">A classe acima é derivada da classe conta, tendo as mesmas funções e variáveis, com a adição da variável <i>$numero</i> e a função <i>numero().</i> </p>
+</br>
+<strong><i>Construtores</i></strong>
+<p style="texto-aling:justify;text-indent:120px;">Um construtor é uma função definida na classe que é automaticamente chamada no momento em que a classe é instanciada (através do operador new). O construtor deve ter o mesmo nome que a classe a que pertence. Veja o exemplo: </p>
+<p style="texto-aling:justify;text-indent:90px;font-weight:bolder;">class conta { </p>
+<p style="texto-aling:justify;text-indent:120px;">var $saldo;</p>
+<p style="texto-aling:justify;text-indent:120px;">function conta () { </p>
+<p style="texto-aling:justify;text-indent:150px;">$this.saldo = 0;  </p>
+</br>
+<p style="texto-aling:justify;text-indent:120px;">}</p>
+<p style="texto-aling:justify;text-indent:90px;">function saldo() { </p>
+</br>
+<p style="texto-aling:justify;text-indent:120px;">} </p>
+<p style="texto-aling:justify;text-indent:120px;">function credito($valor) { </p>
+<p style="texto-aling:justify;text-indent:150px;">$this->saldo += $valor;  </p>
+<p style="texto-aling:justify;text-indent:120px;">}</p>
+<p style="texto-aling:justify;text-indent:90px;">}</p>
+</br>
+<p style="texto-aling:justify;text-indent:120px;">Podemos perceber que a classe conta agora possui um construtor, que inicializa a variável <i>$saldo</i> com o valor 0.
+<p style="texto-aling:justify;text-indent:120px;">Um construtor pode conter argumentos, que são opcionais, o que torna esta ferramenta mais 
+poderosa. No exemplo acima, o construtor da classe conta pode receber como argumento um valor, que seria 
+o valor inicial da conta. </p>
+<p style="texto-aling:justify;text-indent:120px;">ale observar que para classes derivadas, o construtor da classe pai não é automaticamente 
+herdado quando o construtor da classe derivada é chamado. </p>
+<br></br>
+
+
+
+
+
+ </div>
+
+</body>
+</html>

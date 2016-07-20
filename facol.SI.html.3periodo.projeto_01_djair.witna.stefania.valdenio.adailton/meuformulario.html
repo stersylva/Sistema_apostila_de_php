@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <meta charset="UTF-8"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <title>Cadastro</title>
+
+        <script src="js/meu_arquivo_javascript.js"></script>
+</head>
+ 
+    <body>
+        <form id="meu_formulario" action="" method="post">
+            Nome: <input id="nome" name="nome" type="text"><br>
+            Sobrenome: <input id="sobrenome" name="sobrenome" type="text"><br>
+            Senha: <input id="senha" name="senha" type="password"><br>
+            Sexo: <input type="radio" name="sexo" value="m"> Masculino
+            <input type="radio" name="sexo" value="f"> Feminino<br>
+            Motivo da Mensagem: <select name="Motivo da Mensagem" id="Motivo da Mensagem">
+                <option></option>
+                <option value="Dúvidas">Dúvidas</option>
+                <option value="Sugestões">Sugestões</option>
+                <option value="Reclamações">Reclamações</option>
+            </select><br>
+            Mensagem: <textarea name="mensagem"></textarea><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,271 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <meta charset="UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+       <title>Php</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body>
+    
+    <div id="mainwrap">																																										
+    <div id="footer_terms">
+        <h1><strong>PROG_WEB</strong> no <a href="http://facol.com/si/" target="_blank"><strong>.::FACOL SI::.</strong></a></h1>
+    </div>
+    
+  <div id="content">
+   <h3>PHP AVANÇADO</h3>
+   <strong><i>Interagindo com o browser</strong></i>
+
+   <p style="texto-aling:justify;text-indent:50px;">PHP também permite interagir com informações do browser automaticamente. Por exemplo, 
+o script a seguir mostra informações sobre o browser do usuário.</p>
+
+<img src="images/cats-crop2.jpg"/>
+
+<p>Esse código em um Internet Explorer 6.0 com sistema operacional Windows 98, geraria:  Mozilla/4.0 
+(compatible; MSIE 6.0; Windows 98)</p>
+
+<img src="images/cats-crop3.jpg"/>
+
+<p style="texto-aling:justify;text-indent:50px;">Neste exemplo, será apenas exibido um texto informando se está sendo utilizado o Microsoft 
+Internet Explorer ou não, mas para outras funções poderia ser utilizado algo semelhante. </p>
+
+<p style="texto-aling:justify;text-indent:50px;">É bom notar o surgimento de mais uma função no código anterior: 
+<b>strpos(string1,string2)</b>. Essa função retorna a posição da primeira aparição de string2 em 
+string1, contando a partir de zero, e não retorna valor algum se não ocorrer. Assim, para testar se a string 
+<b>$HTTP_USER_AGENT</b> contém a string “MSIE”, basta testar se strpos devolve algum valor.</p>
+
+<strong><i>Utilizando formulários HTML</strong></i>
+
+<p style="texto-aling:justify;text-indent:50px;">Ao clicar num botão “Submit” em um formulário HTML as informações dos campos serão 
+enviadas ao servidor especificado para que possa ser produzida uma resposta. O PHP trata esses valores como 
+variáveis, cujo nome é o nome do campo definido no formulário. O exemplo a seguir mostra isso, e mostra 
+também como o código PHP pode ser inserido em qualquer parte do código HTML: </p>
+
+<img src="images/cats-crop4.jpg"/>
+
+
+<p style="texto-aling:justify;text-indent:50px;">
+Ao salvar o arquivo acima e carregá-lo no browser, o usuário verá apenas um 
+formulário que contém um espaço para digitar o texto. Ao digitar um texto qualquer e 
+submeter o formulário, a resposta, que é o mesmo arquivo PHP (indicado pela constante 
+$PATH_INFO, que retorna o nome do arquivo) exibirá a mensagem "Você digitou 
+<<mensagem>>". </p>
+
+<p style="texto-aling:justify;text-indent:50px;">
+Isso ocorre porque o código PHP testa o conteúdo da variável $texto. Inicialmente ele é uma 
+string vazia, e por isso nada é impresso na primeira parte. Quando algum texto é digitado no formulário e 
+submetido, o PHP passa a tratá-lo como uma variável. Como no formulário o campo possui o nome “texto”, a 
+variável com seu conteúdo será $texto. Assim, no próximo teste o valor da variável será diferente de uma 
+string vazia, e o PHP imprime um texto antes do formulário. </p>
+
+<strong><i>Cookies</strong></i>
+
+<p style="texto-aling:justify;text-indent:50px;">Cookies são mecanismos para armazenar e consultar informações nos browsers dos 
+visitantes da página. O PHP atribui cookies utilizando a função setcookie, que deve ser 
+utilizada antes da tag <html> numa página.</p>
+<p style="texto-aling:justify;text-indent:50px;">O uso de cookies não é recomendado quando se trata de informações sigilosas. Os 
+dados dos cookies são armazenados no diretório de arquivos temporários do visitante, 
+sendo facilmente visualizado por pessoas mal intencionadas. </p>
+<p style="texto-aling:justify;text-indent:50px;">Além da opção “aceitar cookies” que pode ser desativada a qualquer momento pelo 
+visitante.</p>
+<p style="texto-aling:justify;text-indent:50px;">Para uma transmissão de dados segura é recomendável o uso de sessões(ver 
+adiante). </p>
+
+<p>Setcookie(“nome_do_cookie”,”seu_valor”,”tempo_de_vida”,”path”,”domínio”,”conexão_s
+egura”)</p>
+<img src="images/cats-crop5.jpg"/>
+
+<strong><i>Sessão</strong></i>
+
+
+<p style="texto-aling:justify;text-indent:50px;">Sessões são mecanismos muito parecidos com os tradicionais cookies. Suas 
+diferenças são que sessões são armazenadas no próprio servidor e não expiram a menos que 
+o programador queira apagar a sessão. </p>
+
+<p style="texto-aling:justify;text-indent:50px;">Existem algumas funções que controlam sessões e estão detalhadas no capítulo 
+“12.Bibliotecas de funções”.
+
+
+<p style="texto-aling:justify;text-indent:50px;">
+Aqui estão as funções de sessão mais usadas.
+<p>Nome da função 
+Argumentos </p>
+<p>Session_start() 
+Não precisa de argumento</p> 
+<p>Session_register() 
+A variável sem o cifrão</p> 
+<p>Session_unregister() 
+A variável sem o cifrão</p> 
+<p>Session_is_registered() A variável sem o cifrão </p>
+
+<p style="texto-aling:justify;text-indent:50px;">
+O <b>session_destroy()</b> só deve ser usado quando for da vontade do programador 
+acabar com todos as sessões daquele visitante, portanto muito cuidado com essa função. </p>
+
+
+<strong><i>Require</strong></i>
+
+<p style="texto-aling:justify;text-indent:50px;">A função <b>require</b> põe o conteúdo de um outro arquivo no arquivo php atual, antes 
+de ser executado. Quando o interpretador do PHP ler este arquivo, ele encontrará todo o 
+conteúdo dos “require´s” adicionado no arquivo corrente. </p>
+<p style="texto-aling:justify;text-indent:50px;">Require(“nomedoarquivo”);</p>
+<p style="texto-aling:justify;text-indent:50px;">Criando o hábito de usar essa função, o programador pode vir a encontrar um erro 
+de arquivo já declarado. Para evitar isso é recomendável que sempre que a função <b>require</b> 
+for utilizada ela seja substituída pela função <b>require_once</b>.</p>
+<p style="texto-aling:justify;text-indent:50px;">Require_once(“nome_do_arquivo“); </p>
+
+<strong><i>Include</strong></i>
+
+<p style="texto-aling:justify;text-indent:50px;">
+A função <b>Include</b> é semelhante à função <b>require</b>, com a diferença que o código do 
+arquivo incluído é processado em tempo de execução, permitindo que sejam usados 
+“includes” dentro de estruturas de controle como <b>for</b> e <b>while</b>.</p>
+
+<img src="images/cats-crop6.jpg">
+
+<strong><i>Formulários Avançados</strong></i>
+
+<p style="texto-aling:justify;text-indent:50px;">O PHP também entende as matrizes em forma de variáveis vindas de um formulário.</p><p></p>
+<p> Exemplo:</p>
+<img src="images/cats-crop7.jpg"><p></p>
+
+<img src="images/cats-crop8.jpg">
+
+<p style="texto-aling:justify;text-indent:50px;">Depois de enviado, os campos se tornarão variáveis e campos como este 
+“dados[nome]” se transformarão em arrays que não deixam de ser variáveis. </p>
+
+<strong><i>Arquivos Remotos</strong></i>
+
+<p style="texto-aling:justify;text-indent:50px;">Nas funções que trabalham com arquivos, é possível utilizar URLs para acessar 
+arquivos em outros servidores na Web ou no próprio servidor</p>
+<p style="texto-aling:justify;text-indent:50px;">As funções aqui utilizadas serão detalhadas mais à frente no capítulo “Biblioteca de 
+Funções”.</p>
+<p></p>
+<p>Exemplo:</p>
+<img src="images/cats-crop9.jpg">
+
+<strong><i>Tratamento de erros</strong></i>
+
+<p style="texto-aling:justify;text-indent:50px;">Existem quatro tipos(até a versão 4.0) de erros no PHP para indicar a gravidade do 
+erro encontrado ou ocorrido. Eles são:</p>
+<p>1. Erros de funções (function errors)</p>
+<p>2. Avisos (warnings)</p>
+<p>3. Erros de processamento (parser error)</p>
+<p>4. Observações (notice)</p>
+
+<p style="texto-aling:justify;text-indent:50px;">As mensagens de erro são uma coisa com que os programadores devem prestar 
+muita atenção, afinal nenhum programador quer por no ar um sistema que quando o 
+primeiro visitante entra apareça uma mensagem de erro. Para evitar essas 
+inconveniências use sempre um “@” antes da cada chamada as funções. Se a opção  
+<b>track_errors</b> no arquivo <b>php.ini</b> estiver habilitada, a mensagem de erro poderá ser 
+encontrada na variável global <b>$php_errormsg</b>. </p>
+
+<center><i>@strtolower(); </i></center> 
+<p>A chamada da função ficaria assim: </p>
+
+<p style="texto-aling:justify;text-indent:50px;">Essa função deixaria todos os caracteres em minúsculo, mas como não foi passado 
+nenhum argumento essa função deveria exibir uma mensagem de erro</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+</body>
+</html>
